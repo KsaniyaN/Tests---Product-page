@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Products</title>
+	<link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
+</head>
+
+<body>
+
+<header>
+	<h1>Women's tops</h1>
+	<select id="js-filter" class="filter" name="">
+		<option value="">Show All</option>
+		<optgroup label="Filter by size">
+			<option value="xs">XS</option>
+			<option value="s">S</option>
+			<option value="m">M</option>
+			<option value="l">L</option>
+			<option value="xl">XL</option>
+		</optgroup>
+		<option value="filter-price-low">Price (low to high)</option>
+		<option value="filter-price-high">Price (high to low)</option>
+		<option value="filter-sale">Sale</option>
+		<option value="filter-exclusive">Exclusive</option>
+	</select>
+</header>
+
+<section class="container">
+	<div class="js-products products">
+	</div>
+</section>
+
+<script src="js/thirdparty/jquery-3.4.0.min.js" type="text/javascript"></script>
+<script src="js/script.min.js" type="text/javascript"></script>
+</body>
+</html>

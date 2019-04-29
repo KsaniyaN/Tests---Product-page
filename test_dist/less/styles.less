@@ -1,0 +1,119 @@
+@import "grid.less";
+
+// variables
+// ----------------------------------------
+// fonts
+@defaultFont: "Arial", sans-serif;
+// colors
+@turquoise: #def1f4;
+@lightgrey: #e1e1e1;
+
+// styles
+// ----------------------------------------
+// simple normalizing
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: @defaultFont;
+  font-size: 100%;
+}
+
+// Header elements
+header {
+  background-color: @turquoise;
+  border: 1px solid @turquoise;
+  margin: 45px auto 10px;
+  max-width: 90%;
+  padding: 10px 0;
+
+  h1 {
+	display: inline-block;
+	font-size: 1.5em;
+	margin-left: 10px
+  }
+
+  // TODO: style the select box
+  select.filter {
+	display: inline-block;
+	float: right;
+	margin-top: 5px;
+	margin-right: 10px;
+	min-width: 150px;
+  }
+}
+
+// Main products section
+div.products {
+  border-color: @lightgrey;
+  border-style: solid;
+  border-width: 0 0 0 1px;
+  margin-bottom: 45px;
+  overflow: hidden;
+
+  .product-item {
+	border-color: @lightgrey;
+	border-style: solid;
+	border-width: 1px 1px 1px 0;
+
+	a {
+	  color: #000;
+	  outline: none;
+	  text-decoration: none;
+	}
+
+	div.product-image {
+	  text-align: center;
+	}
+
+	// specials labels
+	.label--empty,
+	.label--sale,
+	.label--exclusive {
+	  color: #fff;
+	  display: inline-block;
+	  font-size: 0.75em;
+	  margin: 0 0 5px 10px;
+	  padding: 10px 15px;
+	}
+
+	.label--empty {
+	  background-color: transparent;
+	}
+
+	.label--sale {
+	  background-color: #c33;
+	}
+
+	.label--exclusive {
+	  background-color: #090;
+	  padding: 10px 25px;
+	}
+
+	.product-info {
+	  min-height: 3em;
+	  padding: 0 10px 10px;
+
+	  h4,
+	  .product-price {
+		display: inline-block;
+	  }
+
+	  h4 {
+		max-width: 60%;
+		padding-top: .5em;
+	  }
+
+	  .product-price {
+		float: right;
+		font-size: 1.5em;
+		font-weight: bold;
+	  }
+
+	}
+
+  }
+
+}

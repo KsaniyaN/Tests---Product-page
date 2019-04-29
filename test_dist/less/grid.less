@@ -1,0 +1,37 @@
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* initial mobile first element width values */
+.container {
+	box-sizing: border-box;
+	margin: 0 auto;
+	position: relative;
+	width: 90%;
+}
+
+div.column {
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+}
+
+/* updating columns width for larger screens*/
+/* for screens larger than 562px */
+@media (min-width: 562px) {
+	div.column {
+		width: 50%;
+	}
+}
+
+/* for screens larger than 842px */
+@media (min-width: 842px) {
+	div.column {
+		width: 33.33%;
+	}
+}
+
+/* for screens larger than 1122px */
+@media (min-width: 1122px) {
+	div.column {
+		width: 25%;
+	}
+}
