@@ -1,1 +1,13 @@
+## Xenia Novosilska - Front-end development code test
+Features:
+* Responsive layout built from scratch
+* less/css, compiled with a task runner
+* css classes naming based on BEM
+* javascript, jQuery - json parsing, filtering, sorting. Minified
+
+Source js and less files included, but there is no need to compile anything
+
+
+
+
 
