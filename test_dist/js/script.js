@@ -1,6 +1,6 @@
 (function () {
 
-	var jsonData = null;
+	let jsonData = null;
 
 	function init() {
 		readJson();
@@ -8,7 +8,7 @@
 
 	// get data from json
 	function readJson(sorting) {
-		var sortingOrder = sorting;
+		let sortingOrder = sorting;
 		if (!sortingOrder) {
 			sortingOrder = "index";
 		}
@@ -24,9 +24,9 @@
 
 	// get products data
 	function populateProducts(jsonObj, sortingOrder) {
-		var products = jsonObj;
-		var productsContainer = $(".js-products");
-		var sorting = sortingOrder;
+		let products = jsonObj;
+		const productsContainer = $(".js-products");
+		let sorting = sortingOrder;
 
 		//low to high
 		if (sorting === "price-low") {
@@ -46,19 +46,19 @@
 		}
 
 		// build products grid
-		for (var i = 0; i < products.length; i++) {
+		for (let i = 0; i < products.length; i++) {
 
 			// storing data from json
-			var productName = products[i]["productName"];
-			var productImage = products[i]["productImage"];
-			var price = products[i]["price"];
-			var isSale = products[i]["isSale"];
-			var isExclusive = products[i]["isExclusive"];
-			var sizeArray = products[i]["size"];
+			let productName = products[i]["productName"];
+			let productImage = products[i]["productImage"];
+			let price = products[i]["price"];
+			let isSale = products[i]["isSale"];
+			let isExclusive = products[i]["isExclusive"];
+			let sizeArray = products[i]["size"];
 
 			// creating a single product block element
-			var singleProductContainer = $("<div class='column product-item'>");
-			var imagesPath = "images/products/";
+			const singleProductContainer = $("<div class='column product-item'>");
+			const imagesPath = "images/products/";
 
 			productsContainer.append(singleProductContainer);
 
@@ -109,8 +109,8 @@
 			);
 
 			// filter by sizes - add class names
-			for (var j = 0; j < sizeArray.length; j++) {
-				var size = sizeArray[j].toLowerCase();
+			for (let j = 0; j < sizeArray.length; j++) {
+				let size = sizeArray[j].toLowerCase();
 
 				singleProductContainer.addClass(size);
 			}
@@ -120,12 +120,12 @@
 
 	// filter products
 	function filterProducts() {
-		// on select chage
+		// on select change
 		$("#js-filter").change(function () {
 			// get the filter value
-			var filterValue = $(this).val();
+			let filterValue = $(this).val();
 			// get a list of all products
-			var productItems = $(".js-products").children();
+			let productItems = $(".js-products").children();
 
 			// hide everything..
 			productItems.hide();
@@ -153,13 +153,13 @@
 
 	// helper function - sorting
 	// http://stackoverflow.com/questions/979256/how-to-sort-an-array-of-javascript-objects
-	var sort_by = function (field, reverse, primer) {
-		var key = function (x) {
+	let sort_by = function (field, reverse, primer) {
+		let key = function (x) {
 			return primer ? primer(x[field]) : x[field]
 		};
 
 		return function (a, b) {
-			var A = key(a), B = key(b);
+			let A = key(a), B = key(b);
 			return ((A < B) ? -1 : ((A > B) ? 1 : 0)) * [-1, 1][+!!reverse];
 		}
 	};

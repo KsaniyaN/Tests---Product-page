@@ -3,9 +3,9 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		uglify: {
-			build : {
-				src : ["js/script.js"],
-				dest : "js/script.min.js"
+			build: {
+				src: ["js/script.js"],
+				dest: "js/script.min.js"
 			}
 		},
 		less: {
@@ -21,6 +21,10 @@ module.exports = function (grunt) {
 			}
 		},
 		watch: {
+			scripts: {
+				files: ['js/*.js'],
+				tasks: ['uglify']
+			},
 			styles: {
 				files: ['less/**/*.less'], // which files to watch
 				tasks: ['less'],
@@ -30,6 +34,6 @@ module.exports = function (grunt) {
 			}
 		}
 	});
-
-	grunt.registerTask('default', ['less', 'watch']);
+	grunt.loadNpmTasks('grunt-contrib-uglify-es');
+	grunt.registerTask('default', ['uglify', 'less', 'watch']);
 };
