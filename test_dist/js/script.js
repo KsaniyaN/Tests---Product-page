@@ -13,9 +13,10 @@
 			sortingOrder = "index";
 		}
 
-		// keeping local copy of json for quicker testing
-		// $.getJSON("js/products.json",
-		$.getJSON("https://api.jsonbin.io/b/5cae9a54fb42337645ebcad3",
+		// original task json url
+		// $.getJSON("https://api.jsonbin.io/b/5cae9a54fb42337645ebcad3"
+
+		$.getJSON("js/products.json",
 			function (data) {
 				jsonData = data;
 				populateProducts(jsonData, sortingOrder);
